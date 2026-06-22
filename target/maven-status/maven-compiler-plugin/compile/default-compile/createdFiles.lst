@@ -1,0 +1,13 @@
+aiss\dailymotionminer\DailymotionminerApplication.class
+aiss\dailymotionminer\model\dailymotion\DMSubtitleList.class
+aiss\dailymotionminer\model\dailymotion\DMSubtitle.class
+aiss\dailymotionminer\model\videominer\Channel.class
+aiss\dailymotionminer\model\videominer\User.class
+aiss\dailymotionminer\model\videominer\Comment.class
+aiss\dailymotionminer\model\videominer\Caption.class
+aiss\dailymotionminer\controller\DailymotionController.class
+aiss\dailymotionminer\model\dailymotion\DMVideoList.class
+aiss\dailymotionminer\model\dailymotion\DMVideo.class
+aiss\dailymotionminer\model\videominer\Video.class
+aiss\dailymotionminer\model\dailymotion\DMChannel.class
+aiss\dailymotionminer\service\DailymotionService.class
