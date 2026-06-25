@@ -44,6 +44,10 @@ public class DailymotionController {
     @Value("${videominer.base.url}")
     String videominerBaseUrl;
 
+    @Value("${videominer.api.key}")
+    private String apiKey;
+
+
     @Operation(
             summary = "Previsualizar canal de Dailymotion",
             description = "Extrae y transforma los datos de un usuario (canal) de Dailymotion " +
@@ -92,8 +96,18 @@ public class DailymotionController {
                                              @RequestParam(value = "maxVideos", defaultValue = "10") int maxVideos) {
 
         VMChannel vmChannel = getChannel(id, maxVideos);
-        VMChannel createdChannel = restTemplate.postForObject(videominerBaseUrl, vmChannel, VMChannel.class);
 
-        return createdChannel;
+        org.springframework.http.HttpHeaders headers = new org.springframework.http.HttpHeaders();
+        headers.setContentType(org.springframework.http.MediaType.APPLICATION_JSON);
+        headers.set("X-API-KEY", apiKey);
+        org.springframework.http.HttpEntity<VMChannel> requestEntity = new org.springframework.http.HttpEntity<>(vmChannel, headers);
+        org.springframework.http.ResponseEntity<VMChannel> response = restTemplate.exchange(
+                videominerBaseUrl,
+                org.springframework.http.HttpMethod.POST,
+                requestEntity,
+                VMChannel.class
+        );
+
+        return response.getBody();
     }
 }
