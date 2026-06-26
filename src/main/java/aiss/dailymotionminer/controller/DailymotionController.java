@@ -41,7 +41,7 @@ public class DailymotionController {
     @Autowired
     RestTemplate restTemplate;
 
-    @Value("${videominer.base.url}")
+    @Value("${videominer.uri}")
     String videominerBaseUrl;
 
     @Value("${videominer.api.key}")
