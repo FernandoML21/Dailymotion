@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "explicit",
         "total",
         "has_more",
-        "video"
+        "list"
 })
 @Generated("jsonschema2pojo")
 public class VideoSearch {
