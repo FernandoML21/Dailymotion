@@ -27,7 +27,7 @@ public class VideoSearch {
     private Integer total;
     @JsonProperty("has_more")
     private Boolean hasMore;
-    @JsonProperty("video")
+    @JsonProperty("list")
     private java.util.List<aiss.dailymotionminer.model.dailymotion.Video> video;
 
     @JsonProperty("page")
@@ -80,12 +80,12 @@ public class VideoSearch {
         this.hasMore = hasMore;
     }
 
-    @JsonProperty("video")
+    @JsonProperty("list")
     public java.util.List<aiss.dailymotionminer.model.dailymotion.Video> getVideo() {
         return video;
     }
 
-    @JsonProperty("video")
+    @JsonProperty("list")
     public void setVideo(java.util.List<aiss.dailymotionminer.model.dailymotion.Video> video) {
         this.video = video;
     }
