@@ -26,7 +26,7 @@ public class VMVideo {
     @JsonProperty("user")
     private User author;
 
-    @JsonProperty("thumbnail")
+    @JsonProperty("thumbnails")
     private List<VMThumbnail> thumbnails;
 
     public List<VMThumbnail> getThumbnails() { return thumbnails; }
