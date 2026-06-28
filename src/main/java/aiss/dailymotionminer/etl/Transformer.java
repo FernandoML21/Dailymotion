@@ -29,25 +29,25 @@ public class Transformer {
 
         return vmChannel;
     }
-    public static List<VMThumbnail> transformThumbnails(Video dmVideo) {
-        List<VMThumbnail> thumbnails = new ArrayList<>();
+  public static List<VMThumbnail> transformThumbnails(Video dmVideo) {
+    List<VMThumbnail> thumbnails = new ArrayList<>();
 
-        if (dmVideo.getThumbnailUrl() != null) {
-            VMThumbnail large = new VMThumbnail();
-            large.setUrl(dmVideo.getThumbnailUrl());
-            large.setSizeType("large");
-            thumbnails.add(large);
-        }
-
-        if (dmVideo.getThumbnail240Url() != null) {
-            VMThumbnail small = new VMThumbnail();
-            small.setUrl(dmVideo.getThumbnail240Url());
-            small.setSizeType("small");
-            thumbnails.add(small);
-        }
-
-        return thumbnails;
+    if (dmVideo.getThumbnailUrl() != null) {
+        VMThumbnail large = new VMThumbnail();
+        large.setUrl(dmVideo.getThumbnailUrl());
+        large.setSizeType("preview");  
+        thumbnails.add(large);
     }
+
+    if (dmVideo.getThumbnail240Url() != null) {
+        VMThumbnail small = new VMThumbnail();
+        small.setUrl(dmVideo.getThumbnail240Url());
+        small.setSizeType("thumbnail");  
+        thumbnails.add(small);
+    }
+
+    return thumbnails;
+}
 
 
 
