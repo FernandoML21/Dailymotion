@@ -14,8 +14,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "description",
         "created_time",
         "tags",
-        "thumbnail_url",      // ← añadido
-        "thumbnail_240_url"   // ← añadido
+        "thumbnail_url",      
+        "thumbnail_240_url"   
 })
 @Generated("jsonschema2pojo")
 public class Video {
