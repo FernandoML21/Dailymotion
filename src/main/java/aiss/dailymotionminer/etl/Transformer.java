@@ -29,13 +29,26 @@ public class Transformer {
 
         return vmChannel;
     }
-    public static VMThumbnail transformThumbnail(Video dmVideo) {
-        if (dmVideo == null || dmVideo.getThumbnailUrl() == null) return null;
-        VMThumbnail vmThumbnail = new VMThumbnail();
-        vmThumbnail.setUrl(dmVideo.getThumbnailUrl());
-        vmThumbnail.setThumbnailUrl(dmVideo.getThumbnail240Url());
-        return vmThumbnail;
+    public static List<VMThumbnail> transformThumbnails(Video dmVideo) {
+        List<VMThumbnail> thumbnails = new ArrayList<>();
+
+        if (dmVideo.getThumbnailUrl() != null) {
+            VMThumbnail large = new VMThumbnail();
+            large.setUrl(dmVideo.getThumbnailUrl());
+            large.setSizeType("large");
+            thumbnails.add(large);
+        }
+
+        if (dmVideo.getThumbnail240Url() != null) {
+            VMThumbnail small = new VMThumbnail();
+            small.setUrl(dmVideo.getThumbnail240Url());
+            small.setSizeType("small");
+            thumbnails.add(small);
+        }
+
+        return thumbnails;
     }
+
 
 
     public static VMVideo transformVideo(Video dmVideo) {
@@ -45,7 +58,7 @@ public class Transformer {
         vmVideo.setId(dmVideo.getId());
         vmVideo.setName(dmVideo.getTitle()); // Usamos getTitle() de tu clase Video
         vmVideo.setDescription(dmVideo.getDescription());
-        vmVideo.setThumbnail(transformThumbnail(dmVideo));
+        vmVideo.setThumbnails(transformThumbnails(dmVideo));
 
         if (dmVideo.getCreatedTime() != null) {
             vmVideo.setReleaseTime(dmVideo.getCreatedTime().toString());
