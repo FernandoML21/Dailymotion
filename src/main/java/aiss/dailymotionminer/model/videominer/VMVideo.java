@@ -27,10 +27,10 @@ public class VMVideo {
     private User author;
 
     @JsonProperty("thumbnail")
-    private VMThumbnail thumbnail;
+    private List<VMThumbnail> thumbnails;
 
-    public VMThumbnail getThumbnail() { return thumbnail; }
-    public void setThumbnail(VMThumbnail thumbnail) { this.thumbnail = thumbnail; }
+    public List<VMThumbnail> getThumbnails() { return thumbnails; }
+    public void setThumbnails(List<VMThumbnail> thumbnails) { this.thumbnails = thumbnails; }
 
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
