@@ -35,14 +35,14 @@ public class Transformer {
     if (dmVideo.getThumbnailUrl() != null) {
         VMThumbnail large = new VMThumbnail();
         large.setUrl(dmVideo.getThumbnailUrl());
-        large.setSizeType("preview");  
+        large.setSizeType("thumbnail");  
         thumbnails.add(large);
     }
 
     if (dmVideo.getThumbnail240Url() != null) {
         VMThumbnail small = new VMThumbnail();
         small.setUrl(dmVideo.getThumbnail240Url());
-        small.setSizeType("thumbnail");  
+        small.setSizeType("preview");  
         thumbnails.add(small);
     }
 
